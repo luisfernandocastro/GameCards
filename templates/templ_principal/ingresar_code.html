@@ -12,11 +12,19 @@
         <!--columna 1 -->
         <div class="col-lg-6">
             <h3>Este es tu codigo</h3>
-            <input type="text" id="MiEntrada" value="Luis24" placeholder="Codigo Generado" class="">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="text" id="MiEntrada" class="form-control" disabled="disabled" value="code">
+                </div>
+                <div class="col-lg-6">
+                    <button onclick="copiar()" class="btn btn-info boton_principal">Copiar</button>
+                </div>
+            </div>
             <!-- Funcion del boton copiar -->
-            <button onclick="copiar()" class="btn btn-info">Copiar</button>
             <br>
-            <button type="submit" class="btn btn-info">Empezar</button>
+            <a type="submit" class="btn btn-info boton_principal" href="{% url 'sala' %}">Empezar</a>
+            
         </div>
         <!-- columna 2 -->
     </div>

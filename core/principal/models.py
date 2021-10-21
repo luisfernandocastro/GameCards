@@ -8,6 +8,10 @@ class Jugadores(models.Model):
     nombre = models.CharField(max_length=100,null=True) # Turnos
     estado = models.BooleanField(default='True',null=True)
 
+
+    class Meta:
+        verbose_name_plural = 'Jugadores'
+
     
 
 class Categoria(models.Model): # Imagenes 
@@ -16,17 +20,30 @@ class Categoria(models.Model): # Imagenes
     error = models.ForeignKey('Error', models.DO_NOTHING, db_column='Error',default=None)  
 
 
+    class Meta:
+        verbose_name_plural = 'Categoria'
+
+
 class Programador(models.Model):
     nombre = models.CharField(max_length=100,default=None,null=True)
-    image = models.ImageField(null=True,default=None)
+    image = models.ImageField(upload_to="programadores",null=True,default=None)
+
+    class Meta:
+        verbose_name_plural = 'Programador'
 
 class Modulo(models.Model):
     nombre = models.CharField(max_length=100,default=None,null=True)
-    image = models.ImageField(null=True,default=None)
+    image = models.ImageField(upload_to="modulos",null=True,default=None)
+
+    class Meta:
+        verbose_name_plural = 'Modulo'
 
 class Error(models.Model):
     nombre = models.CharField(max_length=100,default=None,null=True)
-    image = models.ImageField(null=True,default=None)
+    image = models.ImageField(upload_to="errores",null=True,default=None)
+
+    class Meta:
+        verbose_name_plural = 'Error'
     
 
 class Code(models.Model):

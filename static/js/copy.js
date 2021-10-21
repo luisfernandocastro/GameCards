@@ -6,6 +6,7 @@ function copiar() {
 
     navigator.clipboard.writeText(copiarTexto.value);
 
-    alert("Ha copiado el siguiente codigo = !" + copiarTexto.value);
+    alert("Su codigo ha sido copiado = " + copiarTexto.value);
     
 }
+

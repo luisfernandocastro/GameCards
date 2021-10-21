@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from .models import *
 
 #Librerias Ramdom  
 
@@ -16,7 +17,19 @@ def tablero(request):
     return render(request,'templ_principal/tablero_personal.html')
 
 def sala(request):
-    return render(request, 'templ_principal/sala.html')
+    programador = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
+    modulo = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
+    error = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
+
+    random_secrets = random.sample(programador,modulo,error,3)
+    random_item = random.choice(programador)
+
+    random_player = random.sample(programador,4)
+    random_item = random.choice(programador)
+
+
+    return render(request, 'templ_principal/sala.html',{'random_items':random_secrets,'random_player':random_player})
+
 
 class Ingresar_code(TemplateView):  
     template_name = "templ_principal/ingresar_code.html"

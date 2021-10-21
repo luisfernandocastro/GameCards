@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'GameCards.wsgi.application'
-
+# ASGI_APPLICATION = "asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -129,11 +129,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CHANNEL_LAYERS = {
-    "default":{
-        "BACKEND": "channels_redis.core.RedisChannelLasyer",
-        "CONFIG":{
-            "hosts": [("127.0.0.1",6379)],
-        },
-    },
-}
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
