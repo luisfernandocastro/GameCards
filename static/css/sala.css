@@ -1,0 +1,17 @@
+.carta{
+    height: 100px;
+    width: 70px;
+}
+.avatar{
+    height: 250px;
+    width: 170px;
+}
+.logo{
+    display:block;
+    margin:auto;    
+}
+
+.letra{
+    font-family: var(--body-font);
+    font-size: 20px;
+}

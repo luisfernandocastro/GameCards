@@ -1,6 +1,66 @@
-.carta{
-    height: 150px;
-    width: 100px;
+
+/* variables styles */
+:root{
+    /* fonts */
+    --body-font:'Quicksand', sans-serif;
+
+
+    /* colors */
+    --color-primary: #09D2DC;
+    --color-hover-primary:#078F96;
 }
 
 
+
+*{
+    font-family: var(--body-font);
+    font-size: 13px;
+}
+
+
+.carta{
+    height: 100px;
+    width: 70px;
+}
+
+
+/* ---------- start styles index -------------*/
+
+
+.body-index{
+    background-color: #fcf8f8;
+}
+
+.div_icono{
+    height: 100%;
+    width: 100%;    
+}
+
+.logo{
+    width: 650px;
+    height: 450px;
+}
+
+
+.boton_principal{
+    /* background-color: var(--color-primary); */
+    border: none;
+    padding: 10px 60px 10px 60px;
+    border-radius: 30px !important;
+}
+
+
+.boton_principal:hover{
+    background-color:var(--color-hover-primary);
+}
+
+/* styles input index */
+.form-control{
+    border-radius: 30px;
+    padding: 20px;
+}
+
+/* end styles input index */
+
+
+/* -------------- end styles index--------------------- */

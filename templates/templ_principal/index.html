@@ -1,19 +1,30 @@
 {% extends "base.html" %}
 
+{% block classbody %}
+  <body class="body-index">
+{% endblock classbody %}
 
 {% block content %}
 
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-lg-6">
-      <img class="img-fluid"
+  <div class="row mt-5 m-0 vh-100  justify-content-center align-items-center">
+    <div class="col-lg-8">
+      <img class="img-fluid d-block mx-auto logo"
         src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/icono_game.jpg" alt="">
     </div>
-    <div class="col-lg-6">
-      <button class="btn btn-primary">Generar sala</button>
-      <h5>Ingresa tu codigo de empleado</h5>
-      <div class=""></div>
-      <input type="text" class="form-control">
+    <div class="col-lg-4">
+      <button class="btn boton_principal btn-info">Generar sala</button>
+      <h5 class="mt-3">Ingresa tu codigo de Invitado</h5>
+
+      <div class="row">
+        <div class="col-lg-9">
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-lg-3">
+          <button class="btn boton_principal btn-info">Empezar</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center">Jugador 1</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/cuadro_gris.jpeg" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>John Doe</h1>
+                    <p>Architect & Engineer</p>
+                    <p>We love that guy</p>
+                  </div>
+                </div>
+              </div>          
+                                  
+        </div>
+        <div class="col-lg-4">
+            <div class="container">
+                <h2>Mi tabala</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="bg-info">
+                            <th>Quien</th>
+                            <th>Notas</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pedro</td>
+                            <td><input></td>
+                        </tr>
+                        <tr>
+                            <td>Juan</td>
+                            <td><input></td>
+                        </tr>
+                        <tr>
+                            <td>Carlos</td>
+                            <td><input></td>
+                        </tr>
+                        <tr>
+                            <td>Juanita</td>
+                            <td><input></td>
+                        </tr>
+                        <tr>
+                            <td>Antonio</td>
+                            <td><input></td>
+                        </tr>
+                        <tr>
+                            <td>Carolina</td>
+                            <td><input></td>
+                        </tr>
+                        <tr>
+                            <td>Manuel</td>
+                            <td><input></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <button class="btn btn-info">Preguntar</button>
+    <button class="btn btn-info">Acusar</button>
+</div>
+
+
+{% endblock content %}

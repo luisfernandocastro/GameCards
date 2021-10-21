@@ -3,43 +3,28 @@
 {% block content %}
 
 
-<!DOCTYPE html>
-<html lang="en">
+<div class="container">
+  <div class="row m-0 vh-100 justify-content-center align-items-center">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-
-<body>
-
-    <div class="container">
-        <div class="row-mt-5">
-            <div class="col-lg-6">
-            <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/icono_game.jpg"
-                class="img-fluid">
-        </div>
-            <div class="col-lg-6">
-                    <label>Este es tu codigo de la sala</label>
-                    <input type="text" class="form-control" style="background-color: grey; color: white"></input>
-                    <button class="btn btn-primary">Copiar</button>
-                    <br> 
-                    <button class="btn btn-success">Empezar</button>
-                </div>
-            </div>
-        </div>
-
-
-
+    <div class="col-lg-6">
+      <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/icono_game.jpg">
     </div>
+    <!--columna 1 -->
+    <div class="col-lg-6">
+      <h3>Este es tu codigo</h3>
+      <input type="text" id="MiEntrada" value="Luis24" placeholder="Codigo Generado">
+      <!-- Funcion del boton copiar -->
+      <button onclick="copiar()" class="btn btn-primary">Copiar</button>
+      <br>
+      <button type="submit" class="btn btn-primary">Empezar</button>
+    </div>
+    <!-- columna 2 -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
 
 
 
-
-</body>
-
-</html>
 
 {% endblock content %}
