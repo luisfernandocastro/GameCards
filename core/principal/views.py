@@ -21,7 +21,7 @@ def sala(request):
     modulo = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
     error = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
 
-    random_secrets = random.sample(programador,modulo,error,3)
+    random_secrets = random.sample(programador,3)
     random_item = random.choice(programador)
 
     random_player = random.sample(programador,4)

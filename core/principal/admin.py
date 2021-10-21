@@ -10,8 +10,6 @@ from .models import *
 # pass
 
 
-
-
 @admin.register(Modulo)
 class ModuloAdmin(admin.ModelAdmin):
     list_display = ('nombre')
@@ -35,12 +33,12 @@ class ModuloAdmin(admin.ModelAdmin):
 
 @admin.register (Programador)
 class ProgramadorAdmin(admin.ModelAdmin):
-    list_display = ('nombre','imagen')
+    list_display = ('nombre',)
     search_fields = ['nombre']
-    # list_editable = ['nombre']
     list_filter = ['nombre']
     list_per_page = 10
     pass
+
 
 @admin.register (Jugadores)
 class JugadoresAdmin(admin.ModelAdmin):
@@ -50,6 +48,7 @@ class JugadoresAdmin(admin.ModelAdmin):
     list_filter = ['nombre']
     list_per_page = 10
     pass
+
 
 @admin.register (Categoria)
 class CategoriasAdmin(admin.ModelAdmin):
