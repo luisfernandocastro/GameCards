@@ -17,14 +17,20 @@ def tablero(request):
     return render(request,'templ_principal/tablero_personal.html')
 
 def sala(request):
-    programador = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
-    modulo = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
-    error = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
 
-    random_secrets = random.sample(programador,3)
+    programador = list(Programador.objects.all())
+    modulo = list(Modulo.objects.all())
+    error = list(Error.objects.all())
+
+    cartas = programador + modulo + error
+
+    # modulo = list(Modulo.objects.all(),Error.objects.all())
+    # error = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
+
+    random_secrets = random.sample(cartas,4)
     random_item = random.choice(programador)
 
-    random_player = random.sample(programador,4)
+    random_player = random.sample(cartas,4)
     random_item = random.choice(programador)
 
 
