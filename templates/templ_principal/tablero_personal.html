@@ -2,22 +2,76 @@
 
 {% block content %}
 <h1 class="text-center">Jugador 1</h1>
+<br>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/cuadro_gris.jpeg" alt="Avatar" style="width:300px;height:300px;">
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>John Doe</h1>
-                    <p>Architect & Engineer</p>
-                    <p>We love that guy</p>
-                  </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/cuadro_gris.jpeg"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/programador_juanita.jpeg"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                                <h1 class="text-dark">Juanita</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>          
-                                  
+                <div class="col-lg-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/cuadro_gris.jpeg"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/error_stack_overflow.png"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                                <h1 class="text-dark">Stack overflow</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/cuadro_gris.jpeg"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/modulo_nomina.png"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                                <h1 class="text-dark">Nomina</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/cuadro_gris.jpeg"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/modulo_facturacion.jpg"
+                                    alt="Avatar" style="width:200px; height:250px;">
+                                <h1 class="text-dark">Facturación</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
         </div>
         <div class="col-lg-4">
             <div class="container">
@@ -65,10 +119,91 @@
 
         </div>
     </div>
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#pregunta">
+        Pregunta
+    </button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#acusacion">
+        Acusacion
+    </button>
+</div>
+<!-- The Modal -->
+<div class="modal fade" id="pregunta">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Haz tu pregunta</h4>
 
-    <button class="btn btn-info">Preguntar</button>
-    <button class="btn btn-info">Acusar</button>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>Ejemplo: “¿Fue Pedro en el módulo de nómina con Syntax Error?” </p>                
+                <form>
+                    <label>Programador</label>
+                    <select name="cars" class="custom-select">
+                        <option value="1">Pedro</option>
+                        <option value="2">Juan</option>
+                        <option value="3">Carlos</option>
+                        <option value="4">Juanita</option>
+                        <option value="5">Antonio</option>
+                        <option value="6">Carolina</option>
+                        <option value="7">Manuel</option>
+                    </select>
+                    <label>Modulo</label>
+                    <select name="cars" class="custom-select">
+                        <option value="1m">Nómina</option>
+                        <option value="2m">Facturación</option>
+                        <option value="3m">Recibos</option>
+                        <option value="4m">Comprobante contable</option>
+                        <option value="5m">Usuarios</option>
+                        <option value="6m">Contabilidad</option>                        
+                    </select>
+                    <label>Tipo de error</label>
+                    <select name="cars" class="custom-select">
+                        <option value="1e">404</option>
+                        <option value="2e">Stack overflow</option>
+                        <option value="3e">Memory out of range</option>
+                        <option value="4e">Null pointer</option>
+                        <option value="5e">Syntax error</option>
+                        <option value="6e">Encoding error</option>                        
+                    </select>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Enviar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="acusacion">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 

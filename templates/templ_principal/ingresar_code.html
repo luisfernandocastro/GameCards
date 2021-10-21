@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row m-0 vh-100 justify-content-center align-items-center">
+
+        <div class="col-lg-6">
+            <img src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/icono_game.jpg">
+        </div>
+        <!--columna 1 -->
+        <div class="col-lg-6">
+            <h3>Este es tu codigo</h3>
+            <input type="text" id="MiEntrada" value="Luis24" placeholder="Codigo Generado">
+            <!-- Funcion del boton copiar -->
+            <button onclick="copiar()" class="btn btn-info">Copiar</button>
+            <br>
+            <button type="submit" class="btn btn-info">Empezar</button>
+        </div>
+        <!-- columna 2 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+
+
+
+{% endblock content %}

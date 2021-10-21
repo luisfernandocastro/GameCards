@@ -1,17 +1,33 @@
+from django.contrib.admin.sites import DefaultAdminSite
 from django.db import models
 
 # Create your models here.
 
-class Sala(models.Model):
-    asignarsala = models.CharField(max_length=100,null=True) # #Generar el codigo
-
 
 class Jugadores(models.Model):
-    jugador = models.CharField(max_length=100,null=True) # Turnos
+    nombre = models.CharField(max_length=100,null=True) # Turnos
+    estado = models.BooleanField(default='True',null=True)
 
     
 
 class Categoria(models.Model): # Imagenes 
-    image_programador=models.ImageField(upload_to="programadores")
-    image_modulo=models.ImageField(upload_to="modulo")
-    image_error=models.ImageField(upload_to="error")
+    programador = models.ForeignKey('Programador', models.DO_NOTHING, db_column='Programador',default=None)  
+    modulo = models.ForeignKey('Modulo', models.DO_NOTHING, db_column='Modulo',default=None)  
+    error = models.ForeignKey('Error', models.DO_NOTHING, db_column='Error',default=None)  
+
+
+class Programador(models.Model):
+    nombre = models.CharField(max_length=100,default=None,null=True)
+    image = models.ImageField(null=True,default=None)
+
+class Modulo(models.Model):
+    nombre = models.CharField(max_length=100,default=None,null=True)
+    image = models.ImageField(null=True,default=None)
+
+class Error(models.Model):
+    nombre = models.CharField(max_length=100,default=None,null=True)
+    image = models.ImageField(null=True,default=None)
+    
+
+class Code(models.Model):
+    nombre = models.CharField(max_length=5,null=True)

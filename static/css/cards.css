@@ -32,14 +32,12 @@
   }
   
   
-  .flip-card-front {
-    background-color: #bbb;
+  .flip-card-front {    
     color: black;
   }
   
   
-  .flip-card-back {
-    background-color: dodgerblue;
+  .flip-card-back {    
     color: white;
     transform: rotateY(180deg);
   }
