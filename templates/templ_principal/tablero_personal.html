@@ -133,12 +133,14 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal">Enviar</button>
+                <button type="button" id="botonalert2" class="btn btn-info" data-dismiss="modal">Enviar</button>
             </div>
 
         </div>
     </div>
 </div>
+
+
 <div class="modal fade" id="acusacion">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -189,12 +191,23 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal">Enviar</button>
+                <button type="button" id="botonalert" class="btn btn-info" data-dismiss="modal">Enviar</button>
             </div>
 
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('botonalert').onclick = function(){
+        alert('Acusacion Enviada');
+    }
+
+    document.getElementById('botonalert2').onclick = function(){
+        alert('Mensaje Enviado');
+    }
+
+</script>
 
 
 {% endblock content %}
