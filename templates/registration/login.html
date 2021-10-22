@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+
+{% block content %}
+<div class="container-fluid mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex m-0 vh-100 justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">                   
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img class="img-fluid"
+                        src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/icono_game.jpg"> </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card2 card border-0 px-4 py-5">
+                    <div class="card-body">
+                        <form method="post">
+                            {%csrf_token%}
+
+                            <div class="form-group">
+                                <label for="">Nombre de usuario</label>
+                                <!--formulario de usuarios input de nombre de usuario,  -->
+                                {% render_field form.username class="form-control inputs_forms" type="email" placeholder="Email"%}
+                            </div>
+                                <!-- formulario de usuario input de codigo de usuario -->
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                {% render_field form.password class="form-control inputs_forms" type="password" placeholder="Password"%}
+                            </div>
+                            
+                                <!--boton para autenticar usuarios -->
+                            <button type="submit" class="btn btn-info">Aceptar</button>
+                            
+                        </form>
+                    </div>                   
+                    <div class="row mb-4 px-3"> <small class="font-weight-bold">No has creado una cuenta? 
+                        <!-- boton registrarse -->
+                        <a class="text-danger " href="{% url 'registro' %}">Registrarse </a></small> </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+{% endblock content %}

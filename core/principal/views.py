@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import *
 
+# from .views import ThreadListView, ThreadDetailView,add_message
+
 #Librerias Ramdom  
 
 import random
@@ -17,9 +19,10 @@ def index(request):
 #vista para el tablero
 def tablero(request):
     return render(request,'templ_principal/tablero_personal.html')
-#vista login
-def login(request):    
-    return render(request, 'templ_principal/login.html')
+
+def partida(request):
+    return render(request,'templ_principal/partida.html')
+
 
 
 
@@ -53,8 +56,8 @@ def sala_dos(request):
     # modulo = list(Modulo.objects.all())
     # error = list(Error.objects.all())
 
-   #declaramos la variable cartas para mostrar una lista las cartas de error 
- 
+    #declaramos la variable cartas para mostrar una lista las cartas de error 
+
     cartas = Cartas = list(Error.objects.all())
 
     # modulo = list(Modulo.objects.all(),Error.objects.all())
@@ -88,9 +91,9 @@ def sala_tres(request):
     random_item = random.choice(programador)
 #retorna la respusta en el template 
     return render(request, 'templ_principal/sala.html',{'random_items':random_secrets,'random_player':random_player})
-#vista 
+#vista sala cuatro 
 def sala_cuatro(request):
-    
+    #consulta en la tabla programador,modulo,error,cartas y lo guarda en cada una de la variables 
     programador = list(Programador.objects.all())
     modulo = list(Modulo.objects.all())
     error = list(Error.objects.all())
@@ -101,10 +104,10 @@ def sala_cuatro(request):
 
     # modulo = list(Modulo.objects.all(),Error.objects.all())
     # error = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
-
+#reparte cuatro cartas secretas
     random_secrets = random.sample(cartas,4)
     random_item = random.choice(programador)
-
+#reparte cuatro cartas al jugador
     random_player = random.sample(cartas,4)
     random_item = random.choice(programador)
 
@@ -113,35 +116,48 @@ def sala_cuatro(request):
     
     return render(request, 'templ_principal/sala.html',{'random_items':random_secrets,'random_player':random_player})
         
-
+#vista basadas en clases para generar el codigo 
 class Ingresar_code(TemplateView):  
     template_name = "templ_principal/ingresar_code.html"
-
+#funcion generar codigo 
     def code(self):
         x = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
-        print ("su codigo es", x)
+        #para generar el codigo alfanumerico de 5 digitos (String + INT) del rango 5 
+        print ("su codigo es", x) #imprime el codigo de 5 digitos alfanumericos
                                 
 
-
+#Vista tablero jugador/ personal 
 def tablero_personal(request):
     
+    #consulta en la tabla programador,modulo,error y lo guarda en cada una de la varibles 
     programador = list(Programador.objects.all())
     modulo = list(Modulo.objects.all())
     error = list(Error.objects.all())
     
-
-    cartas = programador + modulo + error
-
+    #une todas las listas de programador,modulo,error para la variable cartas 
+    cartas = list(Cartas.objects.all())
     # modulo = list(Modulo.objects.all(),Error.objects.all())
     # error = list(Programador.objects.all(),Modulo.objects.all(),Error.objects.all())
 
-    random_secrets = random.sample(cartas,4)
-    random_item = random.choice(programador)
+    random_secrets = random.sample(cartas,4)#reparte 4 cartas secretas 
 
-    random_player = random.sample(cartas,4)
-    random_item = random.choice(programador)
-
+    random_player = random.sample(cartas,4)#reparte 4 cartas secretas al jugador
+#respuesta de la template
     return render(request, 'templ_principal/tablero_personal.html',{'random_player':random_player})
+
+#vista hilos de comunicacion 
+# class ThreadListView(ListView):
+#     model = Thread
+
+# class ThreadDetailView(DetailView):
+#     model = Thread
+
+
+#     def add_message(request, pk):
+    
+#         pass
+
+
 
 
 

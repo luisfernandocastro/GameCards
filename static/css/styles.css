@@ -41,6 +41,11 @@
     height: 450px;
 }
 
+.logo{
+    width: 850px;
+    height: 650px;
+}
+
 
 .boton_principal{
     /* background-color: var(--color-primary); */

@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import *
+from django.contrib.auth import get_user_model
+
+User= get_user_model()
 
 # Register your models here.
 
@@ -8,6 +11,17 @@ from .models import *
 
 # class SalaAdmin(admin.ModelAdmin):
 # pass
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('first_name','last_name')
+    search_fields = ['username']
+    # list_editable = ['nombre']
+    list_filter = ['email']
+    list_per_page = 10
+    pass
+
 
 
 @admin.register(Modulo)

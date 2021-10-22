@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-kq#uk4z)%zvfbnoylr0fh%fo4!l3p8u@5l+^qxfzlj1+v_d0d%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/sala'
+LOGOUT_REDIRECT_URL = '/sala'
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'core.principal.apps.PrincipalConfig',
     'core.Messages.apps.MessagesConfig',
     'core.usuario.apps.UsuarioConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'GameCards.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.mysql',
+        'NAME': BASE_DIR / 'Bd_GameCards.mysql',
     }
 }
 
@@ -104,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
+]   
 
 
 AUTH_USER_MODEL = 'usuario.User'
