@@ -14,3 +14,6 @@ Manual de usuario para Game Cards
 11.	La pregunta pasa por el jugador 3 y 4 realizando el proceso anterior.
 12.	Continua el siguiente Jugador a elegir Pregunta o Acusación.
 13.	Si alguno de los jugadores elige acusación (se abrirá chat o ventana emergente) hace la acusación y si acierta adivinando las 3 cartas secretas GANA el juego si no lo hace pierde su turno.
+
+
+![](https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/Mackups.png)
