@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 
 # Application definition
 
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.principal.apps.PrincipalConfig',
     'core.Messages.apps.MessagesConfig',
+    'core.usuario.apps.UsuarioConfig',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+AUTH_USER_MODEL = 'usuario.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

@@ -13,27 +13,22 @@
                     <h2>Jugador 1</h2>
                     <a href="{% url 'tablero_personal' %}" class="btn btn-info">Ver tablero</a>
                 </div>
+
                 <div class="col-lg-6">
+
                     <div class="row mt-5">
+                    {% for b in  random_items %}
+
                         <div class="col-lg-6">
                             <img class="img-fluid carta"
-                                src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/carta_volteada.jpeg">
+                                src="{{b.image.url}}">
                         </div>
-                        <div class="col-lg-6">
-                            <img class="img-fluid carta"
-                                src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/carta_volteada.jpeg">
-                        </div>
+
+
+                    {% endfor %}
                     </div>
-                    <div class="row mt-5">
-                        <div class="col-lg-6">
-                            <img class="img-fluid carta"
-                                src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/carta_volteada.jpeg">
-                        </div>
-                        <div class="col-lg-6">
-                            <img class="img-fluid carta"
-                                src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/carta_volteada.jpeg">
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -44,6 +39,7 @@
                     <img class="img-fluid avatar"
                         src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/avatar.png"><!--Imagem del avatar-->
                     <h2>Jugador 2</h2>
+                    <a href="{% url 'tablero_personal' %}" class="btn btn-info">Ver tablero</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row mt-5">
@@ -98,6 +94,7 @@
                     <img class="img-fluid avatar"
                         src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/avatar.png"><!--Imagem del avatar-->
                     <h2>Jugador 3</h2>
+                    <a href="{% url 'tablero_personal' %}" class="btn btn-info">Ver tablero</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row mt-5">
@@ -130,6 +127,7 @@
                     <img class="img-fluid avatar"
                         src="https://raw.githubusercontent.com/luisfernandocastro/ImageServer/master/avatar.png"><!--Imagem del avatar-->
                     <h2>Jugador 4</h2>
+                    <a href="{% url 'tablero_personal' %}" class="btn btn-info">Ver tablero</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row mt-5">
@@ -160,9 +158,6 @@
         <!--************************************************************************-->
     </div>
 
-    {% for b in  random_items %}
-    <img src="{{b.image.url}}" alt="">
-    {% endfor %}
 
 </div>
 {% endblock content %}

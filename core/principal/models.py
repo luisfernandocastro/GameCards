@@ -12,6 +12,17 @@ class Jugadores(models.Model):
     class Meta:
         verbose_name_plural = 'Jugadores'
 
+
+class Cartas(models.Model):
+    nombre = models.CharField(max_length=100,null=True) # Turnos
+    image = models.ImageField(upload_to="cartas",null=True,default=None)
+
+
+
+    class Meta:
+        verbose_name_plural = 'Cartas'
+
+
     
 
 class Categoria(models.Model): # Imagenes 

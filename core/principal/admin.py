@@ -60,4 +60,14 @@ class CategoriasAdmin(admin.ModelAdmin):
     pass
 
 
+@admin.register (Cartas)
+class CartaAdmin(admin.ModelAdmin):
+    list_display = ('nombre',)
+    search_fields = ['nombre']
+    # list_editable = ['nombre']    
+    list_filter = ['nombre']
+    list_per_page = 10
+    pass
+
+
 
